@@ -22,8 +22,9 @@ import SideBar from "./components/SideBar.vue";
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  background-color: blue;
+  height: 100vh;
+  width: 100vw;
 }
 
 @media (max-width: 1024px) {

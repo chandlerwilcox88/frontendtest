@@ -42,13 +42,22 @@ onMounted(createBoard);
 </template>
 
 <style lang="scss" scoped>
+.chessboard {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  max-width: 500px;
+  margin: auto;
+  background-color: red;
+}
 .row {
   display: flex;
-  flex-direction: row;
+  flex: 1;
 }
 .square {
-  width: 50px;
-  height: 50px;
+  flex: 1;
+  padding-top: 12.5%;
+  position: relative;
 }
 .white {
   background-color: #e9edcc;
