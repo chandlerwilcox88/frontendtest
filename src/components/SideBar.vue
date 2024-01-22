@@ -22,14 +22,17 @@ const props = defineProps({
 <style lang="scss" scoped>
 .sidebar {
   display: flex;
+  text-align: center;
+
   flex-direction: column;
   background-color: #262522;
   border-radius: 0.3rem;
   margin: 1rem;
 }
-@media (min-width: 1094px) {
+@media (min-width: 1180px) {
   .sidebar {
     flex: 1;
+    text-align: left;
     max-height: 80vh;
     overflow-y: auto;
     margin: 3rem;
@@ -43,7 +46,7 @@ const props = defineProps({
   padding: 2rem;
   border-radius: 0.3rem;
 }
-@media (min-width: 1094px) {
+@media (min-width: 1180px) {
   .title {
     position: sticky;
     top: 0;

@@ -61,7 +61,7 @@ onMounted(createBoard);
   max-width: 100vw;
   aspect-ratio: 1;
 }
-@media (max-width: 1094px) {
+@media (max-width: 1180px) {
   .chessboard {
     margin: 0 auto;
   }

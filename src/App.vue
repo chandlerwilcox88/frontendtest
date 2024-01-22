@@ -35,9 +35,10 @@ body {
   justify-content: start;
   background-color: #302e2b;
   transition: all 0.3s ease;
+  overflow-x: hidden;
 }
 
-@media (min-width: 1094px) {
+@media (min-width: 1180px) {
   .container {
     flex-direction: row;
     align-items: start;
