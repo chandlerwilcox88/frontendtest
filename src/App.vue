@@ -22,7 +22,7 @@ import SideBar from "./components/SideBar.vue";
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  background-color: blue;
+  background-color: #0f0f0f;
   height: 100vh;
   width: 100vw;
 }
