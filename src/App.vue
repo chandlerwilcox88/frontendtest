@@ -19,17 +19,19 @@ import SideBar from "./components/SideBar.vue";
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  background-color: #0f0f0f;
+  justify-content: start;
+  background-color: #302e2b;
   height: 100vh;
   width: 100vw;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: start;
   }
 }
 </style>

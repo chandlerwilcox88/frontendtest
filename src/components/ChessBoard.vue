@@ -16,11 +16,12 @@ const createBoard = () => {
 
 const clickSquare = (row, col) => {
   emit("square-clicked", { row, col });
+  clickedSquares.value.push({ row, col });
 };
 
 const isClicked = (row, col) => {
   return clickedSquares.value.some(
-    (clickedSquare) => clickedSquare.row === row && clickedSquare.col === col
+    (square) => square.row === row && square.col === col
   );
 };
 
@@ -45,19 +46,19 @@ onMounted(createBoard);
 .chessboard {
   display: flex;
   flex-direction: column;
-  height: 500px;
-  max-width: 500px;
-  margin: auto;
-  background-color: red;
+  width: 100vh;
+  max-width: 100vw;
+  aspect-ratio: 1;
 }
+
 .row {
   display: flex;
-  flex: 1;
+  flex: 1 0 12.5%;
 }
 .square {
-  flex: 1;
-  padding-top: 12.5%;
   position: relative;
+  flex: 1 0 12.5%;
+  padding-top: 12.5%;
 }
 .white {
   background-color: #e9edcc;
