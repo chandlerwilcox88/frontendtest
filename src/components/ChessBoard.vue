@@ -6,17 +6,29 @@ const emit = defineEmits(["square-clicked"]);
 const clickedSquares = ref([]);
 
 const createBoard = () => {
+  const columns = ["A", "B", "C", "D", "E", "F", "G", "H"];
   for (let i = 0; i < 8; i++) {
     board.value[i] = [];
     for (let j = 0; j < 8; j++) {
-      board.value[i][j] = { color: (i + j) % 2 === 0 ? "white" : "black" };
+      board.value[i][j] = {
+        color: (i + j) % 2 === 0 ? "white" : "black",
+        position: `${columns[j]}${i + 1}`,
+      };
     }
   }
 };
 
 const clickSquare = (row, col) => {
-  emit("square-clicked", { row, col });
-  clickedSquares.value.push({ row, col });
+  const alreadyClicked = clickedSquares.value.some(
+    (square) => square.row === row && square.col === col
+  );
+
+  if (!alreadyClicked) {
+    const position = board.value[row][col].position;
+    console.log("Emitting position:", position);
+    emit("square-clicked", position);
+    clickedSquares.value.push({ row, col, position });
+  }
 };
 
 const isClicked = (row, col) => {

@@ -1,14 +1,20 @@
+<script setup>
+import { defineProps } from "vue";
+const props = defineProps({
+  clickedSquares: Array,
+});
+</script>
+
 <template>
   <div class="sidebar">
     <div class="title">Game Moves</div>
     <ol>
-      <li>Move</li>
-      <li>Move</li>
+      <li v-for="(square, index) in props.clickedSquares" :key="index">
+        {{ square }}
+      </li>
     </ol>
   </div>
 </template>
-
-<script setup></script>
 
 <style lang="scss" scoped>
 .sidebar {
@@ -31,6 +37,7 @@
   font-weight: bold;
 }
 ol {
+  counter-reset: li;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -38,9 +45,12 @@ ol {
 li {
   color: #c3c2c2;
   font-size: 0.8rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
+  font-weight: 900;
+  margin: 0.5rem;
   &:before {
+    margin-right: 0.3rem;
+    content: counter(li) ".";
+    counter-increment: li;
     color: #939190;
   }
 }

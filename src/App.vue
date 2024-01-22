@@ -1,14 +1,22 @@
-<template>
-  <div class="container">
-    <chess-board />
-    <side-bar />
-  </div>
-</template>
-
 <script setup>
+import { ref } from "vue";
 import ChessBoard from "./components/ChessBoard.vue";
 import SideBar from "./components/SideBar.vue";
+
+const clickedSquares = ref([]);
+
+const handleSquareClick = (square) => {
+  clickedSquares.value.push(square);
+  console.log(clickedSquares.value);
+};
 </script>
+
+<template>
+  <div class="container">
+    <chess-board @square-clicked="handleSquareClick" />
+    <side-bar :clickedSquares="clickedSquares" />
+  </div>
+</template>
 
 <style>
 #app {
