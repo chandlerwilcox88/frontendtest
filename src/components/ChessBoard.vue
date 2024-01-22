@@ -25,7 +25,6 @@ const clickSquare = (row, col) => {
 
   if (!alreadyClicked) {
     const position = board.value[row][col].position;
-    console.log("Emitting position:", position);
     emit("square-clicked", position);
     clickedSquares.value.push({ row, col, position });
   }
@@ -62,7 +61,11 @@ onMounted(createBoard);
   max-width: 100vw;
   aspect-ratio: 1;
 }
-
+@media (max-width: 1094px) {
+  .chessboard {
+    margin: 0 auto;
+  }
+}
 .row {
   display: flex;
   flex: 1 0 12.5%;

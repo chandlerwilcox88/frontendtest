@@ -7,7 +7,6 @@ const clickedSquares = ref([]);
 
 const handleSquareClick = (square) => {
   clickedSquares.value.push(square);
-  console.log(clickedSquares.value);
 };
 </script>
 
@@ -19,6 +18,10 @@ const handleSquareClick = (square) => {
 </template>
 
 <style>
+html,
+body {
+  background-color: #302e2b;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,18 +31,19 @@ const handleSquareClick = (square) => {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: start;
   background-color: #302e2b;
-  height: 100vh;
-  width: 100vw;
   transition: all 0.3s ease;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1094px) {
   .container {
     flex-direction: row;
+    align-items: start;
     justify-content: start;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 </style>
